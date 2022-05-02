@@ -2,7 +2,7 @@
 
 #TB/NTM species identification pipeline Version 1.0 (beta)
 
-#Short Description
+# Short Description
 The pipeline is constructed using nextflow as workflow manager running in a docker container.
 It is able to identify species of TB/nTM from positive MGIT cultures.
 To do so it uses a hsp65 database for fast identification coupled with
@@ -19,9 +19,9 @@ cd MyCodentifier
 docker build --rm -t jonovox/mycodentifier:1.0 ./
 ```
 
-###or
+### or
 
-###OPTION2 (pull docker image from docker hub)
+### OPTION2 (pull docker image from docker hub)
 ```bash
 install docker https://www.docker.com/products/docker-desktop
 git clone https://github.com/JordyCoolen/MyCodentifier.git
@@ -29,7 +29,7 @@ cd MyCodentifier
 docker pull jonovox/mycodentifier:1.0
 ```
 
-###CONDA environments (prebuild)
+### CONDA environments (prebuild)
 download the newest release of the pipeline via:
 https://surfdrive.surf.nl/files/index.php/s/azkU2t09zY1r9qB
 and extract into the Mycodentifier folder
@@ -177,7 +177,29 @@ J.P.M. Coolen
 H. Severin
 ```
 
-# References
+# Tool References
+fastp
+> Shifu Chen, Yanqing Zhou, Yaru Chen, Jia Gu; fastp: an ultra-fast all-in-one FASTQ preprocessor, Bioinformatics, Volume 34, Issue 17, 1 September 2018, Pages i884–i890, https://doi.org/10.1093/bioinformatics/bty560
+
+centrifuge
+> https://ccb.jhu.edu/software/centrifuge/manual.shtml
+
+KMA
+> Clausen, P.T.L.C., Aarestrup, F.M. & Lund, O. Rapid and precise alignment of raw reads against redundant databases with KMA. BMC Bioinformatics 19, 307 (2018). https://doi.org/10.1186/s12859-018-2336-6
+
+SNP-IT
+>Lipworth S, Jajou R, de Neeling A, et al. SNP-IT Tool for Identifying Subspecies and Associated Lineages of Mycobacterium tuberculosis Complex. Emerging Infectious Diseases. 2019;25(3):482-488. doi:10.3201/eid2503.180894.
+
+gatk
+> Van der Auwera GA & O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1st Edition). O'Reilly Media.
+
+bwa-mem
+> Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 25:1754-60. [PMID: 19451168]
+
+delly
+> Tobias Rausch, Thomas Zichner, Andreas Schlattl, Adrian M. Stuetz, Vladimir Benes, Jan O. Korbel. DELLY: structural variant discovery by integrated paired-end and split-read analysis. Bioinformatics. 2012 Sep 15;28(18):i333-i339. https://doi.org/10.1093/bioinformatics/bts378
+
+# Citation
 ```bash
 Currently in submission fase:
 
@@ -189,6 +211,3 @@ Jodie A. Schildkraut1*, Jordy P.M. Coolen1*, Heleen Severin1, Ellen Koenraad1, N
 
 *Authors contributed equally
 ```
-
-
-
