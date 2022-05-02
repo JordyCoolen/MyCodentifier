@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> TB/NTM typing </title>
+</head>
+<body>
+<center>
+    <img src={{logo}}>
+</center>
+
+    <h1>SAMPLE DETAILS</h1>
+    <h2>Sample: {{strainname}}</h2>
+    <h4>Report version: {{version}}</h4>
+    <h4>runID: {{runID}}</h4>
+    <h4>barcode: {{barcode}}</h4>
+
+    <h1>IDENTIFICATION RESULTS:</h1>
+    <h3>HSP65 identification<br></h3>
+    {{HSP}}
+    <h3>TB sublineage identification<br></h3>
+    {{SNPIT}}
+    <h3>Potential Contaminants<br></h3>
+    {{CONTAMINANTS}}
+
+    <h1>EXTRA (NOT YET IMPLEMENTED):</h1>
+
+    <h3>QUALITY CONTROL:</h3>
+    <h3>BAM QC<br></h3>
+    {{BAMQC}}
+
+    <h3>Best matching reference genome<br></h3>
+    {{CENTRIFUGE}}
+    <h3>Reference genome data<br></h3>
+    {{CENTRIFUGEDATA}}
+
+    <h3>WGS identification<br></h3>
+    {{WGS_IDEN}}
+
+    <h3>Susceptibility table<br></h3>
+    {{SUSCEPTIBILITY}}
+    
+    <h3>Detected resistance<br></h3>
+    {{RESISTANCE}}
+    
+    <h3>Unknown mutations on target genes<br></h3>
+    {{RGENE}}
+
+    <!-- <p><b>Date:</b> {{date}}</p>
+    <p><b>Version:</b> {{version}}</p>
+    <p><b>Besthit:</b> {{besthit}}</p>
+    <p><b>Bestscore:</b> {{bestscore}}</p>
+    <p><b>Percentage reads hit Best hit:</b> {{bestperc}}</p>
+    <p><b>Genomesize:</b> {{genomesize}}</p>
+    <p><b>Coverage after cleaning:</b> {{precoverage}}</p>
+    <p><b>Assembled coverage:</b> {{coverage}}</p>
+    <p><b>Assembler:</b> {{assembler}}
+    <p><b>N50:</b> {{N50}}</p>
+    <p><b>Number of contigs:</b> {{numcontigs}}</p>
+    <p><b>Total contig length:</b> {{contiglength}}</p>
+    <p><b>Number of CDS:</b> {{CDS}}</p>
+    <p><b>Overall alignment rate (%):</b> {{alignrate}}</p>
+    <h3>Sample Validation: Passed = {{validate}}<br></h3>
+    <p><b>Coverage {{valcov}}:</b> {{valcovres}}</p>
+    <p><b>Number of contigs {{valnumcontig}}:</b> {{valnumcontigres}}</p>
+    <p><b>N50 {{valN50}}:</b> {{valN50res}}</p>
+    <p><b>Total length of species {{valtotallength}}:</b> {{valtotallengthres}}</p>
+    <p><b>CDS per million {{valCDS}}:</b> {{valCDSres}}</p>
+    <p><b>Overall alignment rate {{valoveralignrate}}:</b> {{valoveralignrateres}}</p>
+    <h3>IDENTIFY<br></h3>
+    {{IDENT}}
+    <h3>MLST ST{{ST}}<br></h3>
+    {{MLST}}
+    <h3>Resistance Present ({{resdbdate}})<br></h3>
+    {{PRES}}
+    <h3>Virulent Factors Present ({{vfdbdate}})<br></h3>
+    {{VFPRES}}
+    <h3>Resistance Uncertain ({{resdbdate}})<br></h3>
+    {{NRES}}
+    <h3>Virulent Factors Uncertain (VFDB)<br></h3>
+    {{VFNPRES}} -->
+</body>
+</html>

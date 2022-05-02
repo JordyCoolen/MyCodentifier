@@ -1,0 +1,19 @@
+FINAL_Tortoli_etal_hsp65_db.fna.zip
+Database constructed using 148 NTM genome sequences and 1 outgroup from:
+Tortoli E, Fedrizzi T, Meehan CJ, et al. The new phylogeny of the genus Mycobacterium: The old and the news. Infect Genet Evol. 2017;56:19-25. doi:10.1016/j.meegid.2017.10.013
+- abricate obtain start position of hsp65 in NTM strains using M.tb H37Rv sequence
+- use bedtools getfasta -fi <input>.fna -bed <bed> -split -name > <database>
+- 88 strains (including from Fedrizzi et al.)
+- 60 strains from Genbank
+- 1 Hoyosella altamirensis strain (out group)
+
+hsp65_full_db db from Jakko
+
+MAC_ITS db from Jakko
+
+ITS1 obtained from NCBI
+
+hsp65_v2 obtained from NCBI
+
+M.tuberculosis_H37Rv_AL123456.3.fasta obtained from NCBI (is full GroEL)
+When merged in hsp65_full_db length trimmed

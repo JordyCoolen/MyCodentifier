@@ -1,0 +1,16 @@
+output/*
+output_*/*
+old_output_*/*
+test/*
+conda/*
+work/*
+.nextflow/*
+.nextflow.log*
+*.tar.gz
+*.pyc
+flowchart.png.*
+extra/*
+.idea/*
+data/new_fasta/*
+.nextflow/*
+.nextflow.log*

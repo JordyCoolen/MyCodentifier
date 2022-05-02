@@ -1,0 +1,10 @@
+MAV_RS11970	c.150a>g	bedaquiline	"Test is fake position [MmpL4, old_locus_tag=MAV_2510]"
+MAV_RS11975	c.150a>g	bedaquiline	"Test is fake position [MmpS5, old_locus_tag=MAV_2511]"
+MAV_RS07325	c.150a>g	macroliden	"Test is fake position [23S, old_locus_tag=MAV_1533]"
+MAV_RS21615	c.150a>g	rifampicine	"Test is fake position [rpoB, old_locus_tag=MAV_4503]"
+MAV_RS00035	c.150a>g	quinolones	Test is fake position [gyrA, old_locus_tag=MAV_0006]
+MAV_RS11980	p.Trp173Arg	bedaquiline	"DOI: 10.1183/13993003.00118-2019 [TetR, old_locus_tag=MAV_2512]"
+MAV_RS07320	n.1400a>g	aminoglycosides	"DOI: 10.1128/JCM.01612-13 (position they name is 1408a>g [16S, old_locus_tag=MAV_1532]"
+MAV_RS21460	p.Cys459Thr	linezolid	"DOI: 10.1016/j.diagmicrobio.2018.10.022 [rplC, old_locus_tag=MAV_4471]"
+MAV_RS21460	p.Gly237Cys	linezolid	"DOI: 10.1016/j.diagmicrobio.2018.10.022 [rplC, old_locus_tag=MAV_4471]"
+MAV_RS21460	p.Cys492G	linezolid	"DOI: 10.1016/j.diagmicrobio.2018.10.022 [rplC, old_locus_tag=MAV_4471]"

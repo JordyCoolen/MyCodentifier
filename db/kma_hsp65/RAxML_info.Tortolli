@@ -1,0 +1,111 @@
+
+
+IMPORTANT WARNING: Sequences M_chimaera_DSM44623 and M_paraintracellulare_KCTC29084 are exactly identical
+
+IMPORTANT WARNING
+Found 1 sequence that is exactly identical to other sequences in the alignment.
+Normally they should be excluded from the analysis.
+
+Just in case you might need it, an alignment file with 
+sequence duplicates removed is printed to file FINAL_Tortoli_etal_hsp65_db.aln.reduced
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+
+This is RAxML version 8.2.12 released by Alexandros Stamatakis on May 2018.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+Alignment has 792 distinct alignment patterns
+
+Proportion of gaps and completely undetermined characters in this alignment: 22.47%
+
+RAxML rapid hill-climbing mode
+
+Using 1 distinct models/data partitions with joint branch length optimization
+
+
+Executing 10 inferences on the original alignment using 10 distinct randomized MP trees
+
+All free model parameters will be estimated by RAxML
+ML estimate of 25 per site rate categories
+
+Likelihood of final tree will be evaluated and optimized under GAMMA
+
+GAMMA Model parameters will be estimated up to an accuracy of 0.1000000000 Log Likelihood units
+
+Partition: 0
+Alignment Patterns: 792
+Name: No Name Provided
+DataType: DNA
+Substitution Matrix: GTR
+
+
+
+
+RAxML was called as follows:
+
+raxmlHPC -# 10 -p 12345 -m GTRCAT -n Tortolli -s FINAL_Tortoli_etal_hsp65_db.aln 
+
+
+Partition: 0 with name: No Name Provided
+Base frequencies: 0.190 0.325 0.345 0.140 
+
+Inference[0]: Time 26.125214 CAT-based likelihood -33777.295549, best rearrangement setting 5
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.648616 1.433131 1.159737 1.862923 5.039885 1.000000 
+Inference[1]: Time 24.067494 CAT-based likelihood -33738.128996, best rearrangement setting 10
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.648404 1.409375 1.136198 1.832740 4.974987 1.000000 
+Inference[2]: Time 38.957846 CAT-based likelihood -33746.941754, best rearrangement setting 5
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.639322 1.403487 1.113464 1.799725 4.905948 1.000000 
+Inference[3]: Time 27.867327 CAT-based likelihood -33744.225763, best rearrangement setting 10
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.633686 1.419636 1.129775 1.792287 4.863514 1.000000 
+Inference[4]: Time 29.293668 CAT-based likelihood -33817.831382, best rearrangement setting 5
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.651819 1.389894 1.144899 1.813845 4.874264 1.000000 
+Inference[5]: Time 28.882229 CAT-based likelihood -33794.880491, best rearrangement setting 5
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.636029 1.384798 1.135685 1.807885 5.001521 1.000000 
+Inference[6]: Time 26.371562 CAT-based likelihood -33811.138340, best rearrangement setting 10
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.651173 1.428782 1.135032 1.846072 5.026192 1.000000 
+Inference[7]: Time 37.300251 CAT-based likelihood -33814.610964, best rearrangement setting 5
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.642913 1.390627 1.115043 1.815752 4.957001 1.000000 
+Inference[8]: Time 29.914460 CAT-based likelihood -33785.810376, best rearrangement setting 10
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.648161 1.417966 1.136428 1.814485 4.957349 1.000000 
+Inference[9]: Time 44.267360 CAT-based likelihood -33744.672798, best rearrangement setting 10
+alpha[0]: 1.000000 rates[0] ac ag at cg ct gt: 0.638247 1.394500 1.109252 1.789551 4.867221 1.000000 
+
+
+Conducting final model optimizations on all 10 trees under GAMMA-based models ....
+
+Inference[0] final GAMMA-based Likelihood: -36840.997926 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.0
+Inference[1] final GAMMA-based Likelihood: -36267.166376 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.1
+Inference[2] final GAMMA-based Likelihood: -36795.508088 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.2
+Inference[3] final GAMMA-based Likelihood: -36795.546480 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.3
+Inference[4] final GAMMA-based Likelihood: -36815.280434 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.4
+Inference[5] final GAMMA-based Likelihood: -36830.054123 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.5
+Inference[6] final GAMMA-based Likelihood: -36798.206432 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.6
+Inference[7] final GAMMA-based Likelihood: -36821.143400 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.7
+Inference[8] final GAMMA-based Likelihood: -36808.354005 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.8
+Inference[9] final GAMMA-based Likelihood: -36798.381705 tree written to file /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_result.Tortolli.RUN.9
+
+
+Starting final GAMMA-based thorough Optimization on tree 1 likelihood -36267.166376 .... 
+
+Final GAMMA-based Score of best tree -36266.369220
+
+Program execution info written to /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_info.Tortolli
+Best-scoring ML tree written to: /Users/jordycoolen/PycharmProjects/mycoprofiler/db/kma_hsp65/RAxML_bestTree.Tortolli
+
+Overall execution time: 374.289624 secs or 0.103969 hours or 0.004332 days
+

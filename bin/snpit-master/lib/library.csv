@@ -1,0 +1,27 @@
+id,species,lineage,sublineage
+MTB-1-IO,M. tuberculosis,Lineage 1; Indo-Oceanic,
+MTB-2-EA-B,M. tuberculosis,Lineage 2; East-Asian,Beijing
+MTB-3-EAI,M. tuberculosis,Lineage 3;East-African-Indian,
+MTB-4-EAm,M. tuberculosis,Lineage 4; Euro-American,
+MTB-4-EAm-H,M. tuberculosis,Lineage 4; Euro-American,Haarlem
+MTB-4-EAm-L,M. tuberculosis,Lineage 4; Euro-American,LAM
+MTB-4-EAm-C,M. tuberculosis,Lineage 4; Euro-American,Cameroon
+MTB-4-EAm-G,M. tuberculosis,Lineage 4; Euro-American,Ghana
+MTB-4-EAm-S,M. tuberculosis,Lineage 4; Euro-American,S-type
+MTB-4-EAm-T,M. tuberculosis,Lineage 4; Euro-American,Tur
+MTB-4-EAm-Ug,M. tuberculosis,Lineage 4; Euro-American,Uganda
+MTB-4-EAm-Ur,M. tuberculosis,Lineage 4; Euro-American,Ural
+MTB-4-EAm-X,M. tuberculosis,Lineage 4; Euro-American,X-type
+MTB-5-WA1,M. tuberculosis,Lineage 5; West-Africa 1,
+MTB-6-WA2,M. tuberculosis,Lineage 6; West-Africa 2,
+MTB-7-Eth,M. tuberculosis,Lineage 7; Ethiopian,
+MTB-Bov-BCG,M. bovis BCG,,
+MTB-Bov-Bov,M. bovis bovis,,
+MTB-Orygis,M. orygis,,
+MTB-Microti,M. microti,,
+MTB-Canetti,M. canetti,,
+MTB-Pinipedii,M. pinipedii,,
+MTB-Bov-Caprae,M. bovis caprae,,
+MTB-DassieBacillus,Dassie bacillus (ex Procavia capensis),,
+MTB-Suricattae,M. suricattae,,
+MTB-Mungi,M. mungi,,
