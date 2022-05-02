@@ -1,6 +1,6 @@
 ![Alt text](bin/MycoprofilerUtils/report/logo.png?raw=true "logo")
 
-#TB/NTM species identification pipeline Version 1.0 (beta)
+# TB/NTM species identification pipeline Version 1.0 (beta)
 
 # Short Description
 The pipeline is constructed using nextflow as workflow manager running in a docker container.
@@ -11,7 +11,7 @@ For TB it also is able to identify subspecies.
 Results are presented in automated pdf and html reports.
 
 ## installation notes:
-###OPTION1 (build docker image from scratch)
+### OPTION1 (build docker image from scratch)
 ```bash
 install docker https://www.docker.com/products/docker-desktop
 git clone https://github.com/JordyCoolen/MyCodentifier.git
