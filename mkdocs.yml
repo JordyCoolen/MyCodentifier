@@ -4,7 +4,7 @@ repo_url: https://github.com/jordycoolen/Mycodentifier
 edit_uri: ""
 
 theme:
-  name: mkdocs
+  name: material
   language: en
 
 # standard config settings
@@ -24,7 +24,7 @@ theme:
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: red
+      primary: blue
       accent: orange
       toggle:
         icon: material/toggle-switch
@@ -38,6 +38,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Install: install.md
+  - Usage: usage.md
 
 # extensions
 markdown_extensions:
