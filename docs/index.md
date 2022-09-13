@@ -175,7 +175,7 @@ output/TEST
 
 ## Flow diagram of current pipeline:
 
-![Alt text](../flowchart.png?raw=true "Flowdiagram")
+![Alt text](logo/flowchart.png?raw=true "Flowdiagram")
 
 # Authors code
 ```bash

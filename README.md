@@ -1,4 +1,4 @@
-![Alt text](bin/MycoprofilerUtils/report/logo.png?raw=true "logo")
+![Alt text](docs/logo/logo.png?raw=true "logo")
 
 # TB/NTM species identification pipeline Version 1.0 (beta)
 
@@ -169,7 +169,7 @@ output/TEST
 
 ## Flow diagram of current pipeline:
 
-![Alt text](flowchart.png?raw=true "Flowdiagram")
+![Alt text](docs/logo/flowchart.png?raw=true "Flowdiagram")
 
 # Authors code
 ```bash
