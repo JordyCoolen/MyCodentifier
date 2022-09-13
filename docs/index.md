@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-![Alt text](../bin/MycoprofilerUtils/report/logo.png?raw=true "logo")
+![Alt text](logo/logo.png?raw=true "logo")
 
 # TB/NTM species identification pipeline Version 1.0 (beta)
 
