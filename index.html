@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Mycodentifier</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Mycodentifier</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/jordy.coolen/Mycodentifier" class="nav-link">jordy.coolen/Mycodentifier</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tbntm-species-identification-pipeline-version-10-beta" class="nav-link">TB/NTM species identification pipeline Version 1.0 (beta)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#short-description" class="nav-link">Short Description</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#installation-notes" class="nav-link">installation notes:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#databases" class="nav-link">Databases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-singularity-sif-out-of-docker-image" class="nav-link">create singularity .sif out of docker image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#run-test-sample" class="nav-link">run TEST sample:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#example-usage" class="nav-link">Example usage:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#singularity-use" class="nav-link">singularity use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#example-of-docker-run" class="nav-link">Example of docker run:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#output-files-test-example" class="nav-link">Output files (TEST example)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#flow-diagram-of-current-pipeline" class="nav-link">Flow diagram of current pipeline:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#authors-code" class="nav-link">Authors code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#tool-references" class="nav-link">Tool References</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#citation" class="nav-link">Citation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><img alt="Alt text" src="../bin/MycoprofilerUtils/report/logo.png?raw=true" title="logo" /></p>
+<h1 id="tbntm-species-identification-pipeline-version-10-beta">TB/NTM species identification pipeline Version 1.0 (beta)<a class="headerlink" href="#tbntm-species-identification-pipeline-version-10-beta" title="Permanent link">&para;</a></h1>
+<h1 id="short-description">Short Description<a class="headerlink" href="#short-description" title="Permanent link">&para;</a></h1>
+<p>The pipeline is constructed using nextflow as workflow manager running in a docker container.
+It is able to identify species of TB/nTM from positive MGIT cultures.
+To do so it uses a hsp65 database for fast identification coupled with
+a Metagenomic method using centrifuge to identify on genome level.
+For TB it also is able to identify subspecies.
+Results are presented in automated pdf and html reports.</p>
+<h2 id="installation-notes">installation notes:<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
+<h3 id="option1-build-docker-image-from-scratch">OPTION1 (build docker image from scratch)<a class="headerlink" href="#option1-build-docker-image-from-scratch" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-bash">install docker https://www.docker.com/products/docker-desktop
+git clone https://github.com/JordyCoolen/MyCodentifier.git
+cd MyCodentifier
+docker build --rm -t jonovox/mycodentifier:1.0 ./</code></pre>
+<h3 id="or">or<a class="headerlink" href="#or" title="Permanent link">&para;</a></h3>
+<h3 id="option2-pull-docker-image-from-docker-hub">OPTION2 (pull docker image from docker hub)<a class="headerlink" href="#option2-pull-docker-image-from-docker-hub" title="Permanent link">&para;</a></h3>
+<pre class="highlight"><code class="language-bash">install docker https://www.docker.com/products/docker-desktop
+git clone https://github.com/JordyCoolen/MyCodentifier.git
+cd MyCodentifier
+docker pull jonovox/mycodentifier:1.0</code></pre>
+<h3 id="conda-environments-prebuild">CONDA environments (prebuild)<a class="headerlink" href="#conda-environments-prebuild" title="Permanent link">&para;</a></h3>
+<p>download the newest release of the pipeline via:
+<a href="https://surfdrive.surf.nl/files/index.php/s/azkU2t09zY1r9qB">https://surfdrive.surf.nl/files/index.php/s/azkU2t09zY1r9qB</a>
+and extract into the Mycodentifier folder</p>
+<h2 id="databases">Databases<a class="headerlink" href="#databases" title="Permanent link">&para;</a></h2>
+<ul>
+<li>currently the databases are not provided</li>
+<li>we will provide in future versions the databases</li>
+<li>please contact us for more information</li>
+</ul>
+<h2 id="create-singularity-sif-out-of-docker-image">create singularity .sif out of docker image<a class="headerlink" href="#create-singularity-sif-out-of-docker-image" title="Permanent link">&para;</a></h2>
+<p><pre class="highlight"><code class="language-bash">bash docker/create_singularity_image.sh &lt;filename&gt; &lt;imagename&gt;</code></pre>
+example:
+<pre class="highlight"><code class="language-bash">bash docker/create_singularity_image.sh mycodentifier_1_0 mycodentifier:1.0</code></pre></p>
+<h2 id="run-test-sample">run TEST sample:<a class="headerlink" href="#run-test-sample" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-bash">cd Mycodentifier
+sh docker/run.sh mycodentifier jonovox/mycodentifier:1.0
+cd /workflow
+# test sample
+nextflow run myco.nf --reads "/workflow/test/H37Rv_MB_R{1,2}.fastq.gz" --threads 8 --sampleName TEST \
+--centrifuge_cont "/workflow/db/centrifuge_db/refv2" --centrifuge_WGS "/workflow/db/centrifuge_db/refv2" -resume</code></pre>
+<h1 id="example-usage">Example usage:<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h1>
+<h2 id="singularity-use">singularity use<a class="headerlink" href="#singularity-use" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-bash">singularity exec -B &lt;/path/to/newcode&gt;:/workflow,&lt;/path/to/fastq.gz/files:/data mycodentifier_v1_72.sif \
+nextflow run /workflow/myco.nf --threads 16 --outDir /workflow/output --snpEff_base /ifs/software/external/mmb/singularity_images/snpEff/ \
+-resume --reads "/data/&lt;samplename&gt;_R{1,2}.fastq.gz" --sampleName &lt;samplename&gt;</code></pre>
+<pre class="highlight"><code class="language-bash">singularity exec -B /ifs/data/mmb/nextseq/runs/200309_NB501730_0373_AHYC7YAFXY/demultiplex/merged_lanes:/data,/ifs/software/external/mmb/mycodentifier:/workflow \
+mycodentifier_v1_72.sif nextflow run /workflow/myco.nf --reads '/data/20090667701-1nieuw_MB_R{1,2}.fastq.gz' --threads 16 --outDir /ifs/software/external/mmb/singularity_images \
+--snpeff_base snpEff/ --sampleName 20090667701-1nieuw_MB</code></pre>
+<h2 id="example-of-docker-run">Example of docker run:<a class="headerlink" href="#example-of-docker-run" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-bash">docker run \
+  -it \
+  --rm \
+  --name mycoprofiler2 \
+  --mount type=bind,source=/location/to/centrifuge/contaminants/database,target=/workflow/db/centrifuge_contaminant,readonly \
+  mycodentifier:latest /bin/bash</code></pre>
+<h2 id="output-files-test-example">Output files (TEST example)<a class="headerlink" href="#output-files-test-example" title="Permanent link">&para;</a></h2>
+<pre class="highlight"><code class="language-bash">output/TEST
+├── GATK
+│             └── raw.snps.indels_TEST.final_rg_MD.vcf
+├── NC_000962.3
+│             └── NC_000962.3_filt_genomic.dict
+├── SNPFasta
+│             └── TEST_altref.fasta.gz
+├── SNPIT
+│             ├── TEST_20220502142245_qc.json
+│             └── TEST_20220502144828_qc.json
+├── WGS_typing
+│             ├── TEST_20220502142245.json
+│             ├── TEST_20220502144828.json
+│             └── TEST_report.file
+├── annot
+│             ├── TEST_snps_indels_filt_annot.vcf
+│             └── snpEff_summary.html
+├── bam_qc
+│             ├── BAM_QC.txt
+│             ├── TEST_20220502142245_qc.json
+│             ├── TEST_20220502144828_qc.json
+│             └── avg_dp.txt
+├── bamfiles
+│             ├── TEST.bam
+│             ├── TEST.bam.bai
+│             ├── TEST.final.bam
+│             ├── TEST.final.bam.bai
+│             ├── TEST.final_rg.bam -&gt; /workflow/work/9e/5cb0668a42153d1a5d191b9ba9c917/TEST.final_rg.bam
+│             ├── TEST.final_rg.bam.bai -&gt; /workflow/work/9e/5cb0668a42153d1a5d191b9ba9c917/TEST.final_rg.bam.bai
+│             ├── TEST.final_rg_MD.bam -&gt; /workflow/work/07/61441a8a33aef5b0da3436460176df/TEST.final_rg_MD.bam
+│             ├── TEST.final_rg_MD.bam.bai -&gt; /workflow/work/07/61441a8a33aef5b0da3436460176df/TEST.final_rg_MD.bam.bai
+│             ├── TEST_subsampled_2C.bam
+│             └── TEST_subsampled_2C.bam.bai
+├── centrifuge
+│             ├── TEST_20220502142245.json
+│             ├── TEST_20220502144828.json
+│             ├── TEST_report.file
+│             └── TEST_spreporter.out
+├── contaminants
+│             ├── TEST_20220502142245.json
+│             ├── TEST_20220502144828.json
+│             └── TEST_report.file
+├── db
+│             └── genomes
+│                 └── NC_000962.3
+│                     ├── NC_000962.3_filt_genomic.fa
+│                     ├── NC_000962.3_filt_genomic.fa.fai
+│                     ├── NC_000962.3_genomic.gbff
+│                     └── NC_000962.3_genomic.gff
+├── delly
+│             └── TEST_delly.vcf.gz
+├── fastp
+│             ├── H37Rv_MB_R1.fastq_fastp.fastq.gz
+│             ├── H37Rv_MB_R2.fastq_fastp.fastq.gz
+│             ├── TEST.fastp_json
+│             ├── TEST_20220502142245.json
+│             └── TEST_20220502144828.json
+├── filtered
+│             ├── TEST_delly_filt.vcf
+│             ├── TEST_filtered_snps.vcf
+│             ├── TEST_flagged_snps.vcf
+│             ├── TEST_gatk_delly_merged.sorted.vcf
+│             └── raw.snps.indels_TEST.final_rg_MD_flagged_indels.vcf
+├── hsp65
+│             ├── TEST_20220502142245.json
+│             ├── TEST_20220502144828.json
+│             ├── hsp65.aln
+│             └── hsp65.res
+├── json
+│             └── TEST.fastp_json
+├── merged
+│             └── TEST_snps_indels_filt.vcf
+├── mutations
+│             ├── TEST_20220502142245_qc.json
+│             └── TEST_20220502144828_qc.json
+└── report
+    ├── TEST.html
+    ├── TEST.pdf
+    ├── TEST_20220502142245_qc.json
+    └── TEST_20220502144828_qc.json</code></pre>
+<h2 id="flow-diagram-of-current-pipeline">Flow diagram of current pipeline:<a class="headerlink" href="#flow-diagram-of-current-pipeline" title="Permanent link">&para;</a></h2>
+<p><img alt="Alt text" src="../flowchart.png?raw=true" title="Flowdiagram" /></p>
+<h1 id="authors-code">Authors code<a class="headerlink" href="#authors-code" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code class="language-bash">J.P.M. Coolen
+H. Severin</code></pre>
+<h1 id="tool-references">Tool References<a class="headerlink" href="#tool-references" title="Permanent link">&para;</a></h1>
+<p>fastp</p>
+<blockquote>
+<p>Shifu Chen, Yanqing Zhou, Yaru Chen, Jia Gu; fastp: an ultra-fast all-in-one FASTQ preprocessor, Bioinformatics, Volume 34, Issue 17, 1 September 2018, Pages i884–i890, <a href="https://doi.org/10.1093/bioinformatics/bty560">https://doi.org/10.1093/bioinformatics/bty560</a></p>
+</blockquote>
+<p>centrifuge</p>
+<blockquote>
+<p><a href="https://ccb.jhu.edu/software/centrifuge/manual.shtml">https://ccb.jhu.edu/software/centrifuge/manual.shtml</a></p>
+</blockquote>
+<p>KMA</p>
+<blockquote>
+<p>Clausen, P.T.L.C., Aarestrup, F.M. &amp; Lund, O. Rapid and precise alignment of raw reads against redundant databases with KMA. BMC Bioinformatics 19, 307 (2018). <a href="https://doi.org/10.1186/s12859-018-2336-6">https://doi.org/10.1186/s12859-018-2336-6</a></p>
+</blockquote>
+<p>SNP-IT</p>
+<blockquote>
+<p>Lipworth S, Jajou R, de Neeling A, et al. SNP-IT Tool for Identifying Subspecies and Associated Lineages of Mycobacterium tuberculosis Complex. Emerging Infectious Diseases. 2019;25(3):482-488. doi:10.3201/eid2503.180894.</p>
+</blockquote>
+<p>gatk</p>
+<blockquote>
+<p>Van der Auwera GA &amp; O'Connor BD. (2020). Genomics in the Cloud: Using Docker, GATK, and WDL in Terra (1<sup>st</sup> Edition). O'Reilly Media.</p>
+</blockquote>
+<p>bwa-mem</p>
+<blockquote>
+<p>Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 25:1754-60. [PMID: 19451168]</p>
+</blockquote>
+<p>delly</p>
+<blockquote>
+<p>Tobias Rausch, Thomas Zichner, Andreas Schlattl, Adrian M. Stuetz, Vladimir Benes, Jan O. Korbel. DELLY: structural variant discovery by integrated paired-end and split-read analysis. Bioinformatics. 2012 Sep 15;28(18):i333-i339. <a href="https://doi.org/10.1093/bioinformatics/bts378">https://doi.org/10.1093/bioinformatics/bts378</a></p>
+</blockquote>
+<h1 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h1>
+<pre class="highlight"><code class="language-bash">Currently in submission fase:
+
+MGIT enriched shotgun metagenomics for routine identification of nontuberculous mycobacteria: a route to personalized healthcare
+
+Jodie A. Schildkraut1*, Jordy P.M. Coolen1*, Heleen Severin1, Ellen Koenraad1, Nicole Aalders1, Willem J.G. Melchers1, Wouter Hoefsloot2, Heiman F.L. Wertheim1, Jakko van Ingen1
+1)  Radboudumc Center for Infectious Diseases, Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, the Netherlands
+2)  Radboudumc Center for Infectious Diseases, Department of pulmonary diseases, Radboud University Medical Center, Nijmegen, the Netherlands
+
+*Authors contributed equally</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.3.0
+Build Date UTC : 2022-09-13 13:49:12.995663+00:00
+-->
