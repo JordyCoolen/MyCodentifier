@@ -203,7 +203,7 @@ delly
 ```bash
 Currently in submission fase:
 
-Full genome analysis for routine identification of nontuberculous mycobacteria: a route to personalized healthcare
+MGIT enriched shotgun metagenomics for routine identification of nontuberculous mycobacteria: a route to personalized healthcare
 
 Jodie A. Schildkraut1*, Jordy P.M. Coolen1*, Heleen Severin1, Ellen Koenraad1, Nicole Aalders1, Willem J.G. Melchers1, Wouter Hoefsloot2, Heiman F.L. Wertheim1, Jakko van Ingen1
 1)	Radboudumc Center for Infectious Diseases, Department of Medical Microbiology, Radboud University Medical Center, Nijmegen, the Netherlands
