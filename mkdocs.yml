@@ -4,10 +4,8 @@ repo_url: https://github.com/jordy.coolen/Mycodentifier
 edit_uri: ""
 
 theme:
-  name: material
+  name: mkdocs
   language: en
-  icon:
-    logo: material/dna
 
 # standard config settings
   features:
